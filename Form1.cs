@@ -22,10 +22,6 @@ namespace Reversi_Namespace
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -46,6 +42,18 @@ namespace Reversi_Namespace
             e.Graphics.DrawLine(pen, 0, 180, 360, 180);
             e.Graphics.DrawLine(pen, 0, 240, 360, 240);
             e.Graphics.DrawLine(pen, 0, 300, 360, 300);
+
+        }
+
+        private void buttonNieuwSpel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Paint(object sender, PaintEventArgs e)
+        {
+            SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
+            e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
         }
     }
 }
