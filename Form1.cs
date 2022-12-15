@@ -10,6 +10,22 @@ using System.Windows.Forms;
 
 namespace Reversi_Namespace
 {
+    public static class GraphicsExtensions
+    {
+        public static void DrawCircle(this Graphics g, Pen pen,
+                                      float centerX, float centerY, float radius)
+        {
+            g.DrawEllipse(pen, centerX - radius, centerY - radius,
+                          radius + radius, radius + radius);
+        }
+
+        public static void FillCircle(this Graphics g, Brush brush,
+                                      float centerX, float centerY, float radius)
+        {
+            g.FillEllipse(brush, centerX - radius, centerY - radius,
+                          radius + radius, radius + radius);
+        }
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -52,8 +68,11 @@ namespace Reversi_Namespace
 
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
-            SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
-            e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
+            SolidBrush Blauw = new SolidBrush(Color.RoyalBlue);
+            SolidBrush Rood = new SolidBrush(Color.DarkRed);
+            //e.Graphics.FillEllipse(Blauw, 10, 10, 100, 100);
+            e.Graphics.FillCircle(Blauw, 40, 20, 40);
+            e.Graphics.FillCircle(Rood, 40, 80, 40);
         }
     }
 }
