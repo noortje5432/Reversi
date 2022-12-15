@@ -56,11 +56,8 @@ namespace Reversi_Namespace
 
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
-            SolidBrush Blauw = new SolidBrush(Color.RoyalBlue);
-            SolidBrush Rood = new SolidBrush(Color.DarkRed);
-            //e.Graphics.FillEllipse(Blauw, 10, 10, 100, 100);
-            e.Graphics.FillCircle(Blauw, 40, 20, 40);
-            e.Graphics.FillCircle(Rood, 40, 80, 40);
+            SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
+            e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
         }
     }
 }
