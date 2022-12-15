@@ -35,14 +35,14 @@
             // 
             // button1
             // 
-            this.buttonHelp.Location = new System.Drawing.Point(403, 17);
-            this.buttonHelp.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(111, 22);
-            this.buttonHelp.TabIndex = 0;
-            this.buttonHelp.Text = "Help";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(434, 8);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 22);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "hoi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -62,9 +62,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(524, 436);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.BordGrootte);
-            this.Controls.Add(this.buttonNieuwSpel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(2);
