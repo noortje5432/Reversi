@@ -35,10 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(434, 8);
+            this.button1.Location = new System.Drawing.Point(496, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 22);
+            this.button1.Size = new System.Drawing.Size(92, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "hoi";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,11 +46,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox1.Location = new System.Drawing.Point(102, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.pictureBox1.Location = new System.Drawing.Point(117, 164);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(315, 270);
+            this.pictureBox1.Size = new System.Drawing.Size(360, 360);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -59,10 +58,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(524, 436);
+            this.ClientSize = new System.Drawing.Size(599, 581);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(2);
