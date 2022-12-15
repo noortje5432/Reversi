@@ -34,7 +34,7 @@ namespace Reversi_Namespace
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            Pen pen= new Pen(Color.White, 2);
+            Pen pen= new Pen(Color.DarkGray, 2);
             e.Graphics.DrawRectangle(pen, 1, 1, 358, 358);
             e.Graphics.DrawLine(pen, 60, 0, 60, 360);
             e.Graphics.DrawLine(pen, 120, 0, 120, 360);
