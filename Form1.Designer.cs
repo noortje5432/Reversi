@@ -62,7 +62,7 @@
             "6 bij 6",
             "8 bij 8"});
             this.comboBox1.Location = new System.Drawing.Point(587, 110);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(243, 40);
             this.comboBox1.TabIndex = 3;
@@ -72,9 +72,9 @@
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Speelveld.Location = new System.Drawing.Point(104, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(812, 800);
+            this.Speelveld.Size = new System.Drawing.Size(360, 360);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 

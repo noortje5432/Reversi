@@ -33,7 +33,7 @@ namespace Reversi_Namespace
                     Color kleur = Color.FromArgb(255, 245, 152);
                     P[x, y].BackColor = kleur;
                     P[x, y].Location = new Point(links, top);
-                    P[x, y].Size = new Size(50, 50);
+                    P[x, y].Size = new Size(55, 55);
                     links += 60; 
                     Speelveld.Controls.Add(P[x, y]);
                 }
