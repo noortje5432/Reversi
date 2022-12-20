@@ -31,7 +31,7 @@ namespace Reversi_Namespace
                 {
                     P[x, y] = new PictureBox();
                     Color kleur = Color.FromArgb(255, 245, 152);
-                    P[x, y].BackColor = kleur;
+                    P[x, y].BackColor = Color.FromArgb(255, 245, 152);
                     P[x, y].Location = new Point(links, top);
                     P[x, y].Size = new Size(55, 55);
                     links += 60; 

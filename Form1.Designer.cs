@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1398, 1155);
+            this.ClientSize = new System.Drawing.Size(993, 755);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
