@@ -17,9 +17,28 @@ namespace Reversi_Namespace
             InitializeComponent();
         }
 
+        int grootte;
+        PictureBox[,] P;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            grootte = 6;
+            P = new PictureBox[grootte, grootte];
+            int links = 2, top = 2;
+            for (int x = 0; x < grootte; x++) 
+            {
+                links = 2;
+                for (int y = 0; y < grootte; y++) 
+                {
+                    P[x, y] = new PictureBox();
+                    Color kleur = Color.FromArgb(255, 245, 152);
+                    P[x, y].BackColor = kleur;
+                    P[x, y].Location = new Point(links, top);
+                    P[x, y].Size = new Size(50, 50);
+                    links += 60; 
+                    Speelveld.Controls.Add(P[x, y]);
+                }
+                top += 60;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,7 +51,7 @@ namespace Reversi_Namespace
             
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        /*private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             pictureBox1.BackColor= Color.FromArgb(255, 245, 152);
             Pen pen= new Pen(Color.DarkGray, 2);
@@ -49,7 +68,7 @@ namespace Reversi_Namespace
             e.Graphics.DrawLine(pen, 0, 300, 360, 300);
 
         }
-
+        */
         private void buttonNieuwSpel_Click(object sender, EventArgs e)
         {
 
@@ -62,6 +81,11 @@ namespace Reversi_Namespace
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
