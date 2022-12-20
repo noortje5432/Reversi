@@ -36,10 +36,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(406, 8);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(660, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 26);
+            this.button1.Size = new System.Drawing.Size(176, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "Nieuw Spel";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,10 +46,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(406, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(660, 61);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 26);
+            this.button2.Size = new System.Drawing.Size(176, 42);
             this.button2.TabIndex = 2;
             this.button2.Text = "Help";
             this.button2.UseVisualStyleBackColor = true;
@@ -63,31 +61,33 @@
             "4 bij 4",
             "6 bij 6",
             "8 bij 8"});
-            this.comboBox1.Location = new System.Drawing.Point(361, 69);
+            this.comboBox1.Location = new System.Drawing.Point(587, 110);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(243, 40);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "Grootte veld";
             // 
             // Speelveld
             // 
-            this.Speelveld.Location = new System.Drawing.Point(64, 108);
+            this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Speelveld.Location = new System.Drawing.Point(104, 173);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(500, 500);
+            this.Speelveld.Size = new System.Drawing.Size(812, 800);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(860, 722);
+            this.ClientSize = new System.Drawing.Size(1398, 1155);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
