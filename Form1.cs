@@ -59,5 +59,10 @@ namespace Reversi_Namespace
             SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
             e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
