@@ -63,7 +63,8 @@
             "4 bij 4",
             "6 bij 6",
             "8 bij 8"});
-            this.comboBox1.Location = new System.Drawing.Point(361, 69);
+            this.comboBox1.Location = new System.Drawing.Point(587, 110);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
             this.comboBox1.TabIndex = 3;
@@ -72,9 +73,10 @@
             // Speelveld
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Speelveld.Location = new System.Drawing.Point(64, 108);
+            this.Speelveld.Location = new System.Drawing.Point(104, 173);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(500, 500);
+            this.Speelveld.Size = new System.Drawing.Size(812, 800);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -83,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(860, 659);
+            this.ClientSize = new System.Drawing.Size(1398, 1155);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
