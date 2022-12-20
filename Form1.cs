@@ -23,7 +23,7 @@ namespace Reversi_Namespace
         {
             grootte = 6;
             P = new PictureBox[grootte, grootte];
-            int links = 2, top = 2;
+            int links, top = 2;
             for (int x = 0; x < grootte; x++) 
             {
                 links = 2;
