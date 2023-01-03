@@ -38,7 +38,10 @@ namespace Reversi_Namespace
                 }
                 top += 60;
             }
+            P[0, 0].BackColor = Color.Black;
         }
+
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

@@ -37,7 +37,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(406, 8);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 26);
             this.button1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(406, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 26);
             this.button2.TabIndex = 2;
@@ -74,9 +74,9 @@
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Speelveld.Location = new System.Drawing.Point(104, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(812, 800);
+            this.Speelveld.Size = new System.Drawing.Size(360, 360);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -85,12 +85,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1398, 1155);
+            this.ClientSize = new System.Drawing.Size(1398, 1055);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
