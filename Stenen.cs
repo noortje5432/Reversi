@@ -29,7 +29,7 @@ namespace Reversi_Namespace
                 Kleur = Brushes.RoyalBlue;
             if (KleurVanSteen == 1)
                 Kleur = Brushes.DarkRed;
-            pea.Graphics.FillEllipse(Kleur, (float)MiddenX + 5, (float)MiddenY+ 5, maatx, maaty);
+            pea.Graphics.FillEllipse(Kleur, (float)MiddenX + 5, (float)MiddenY + 5, maatx, maaty);
         }
     }
 }
