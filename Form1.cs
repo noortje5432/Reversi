@@ -20,22 +20,22 @@ namespace Reversi_Namespace
 
         int grootte = 6;
        // PictureBox[,] P;
-        int kol = 6;
-        int rij = 6;
+       static int kol = 6;
+       static int rij = 6;
 
         private void Form1_Load(object sender, EventArgs e)
         {
            
         }
 
-        public double schaalx()
+        public static double schaalx()
         {
-            return Speelveld.Width / kol;
+            return 400 / kol;
         }
 
-        public double schaaly()
+        public static double schaaly()
         {
-            return Speelveld.Height / rij;
+            return 400 / rij;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
