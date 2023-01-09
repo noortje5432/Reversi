@@ -80,6 +80,13 @@ namespace Reversi_Namespace
 
         }
 
+        private bool MagZet(int SteenX, int SteenY)
+        {
+            int Zet;
+            Zet = beurt % 2 == 0 ? 0 : 1;
+            var 
+        }
+
         private void buttonNieuwSpel_Click(object sender, EventArgs e)
         {
 
