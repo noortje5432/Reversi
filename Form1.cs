@@ -17,7 +17,6 @@ namespace Reversi_Namespace
         static int kol = 6;
         static int rij = 6;
         Stenen[,] steen;
-        int beurt = 0;
 
 
 
