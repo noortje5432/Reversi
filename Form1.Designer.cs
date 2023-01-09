@@ -1,4 +1,6 @@
-﻿namespace Reversi_Namespace
+﻿using System.Drawing;
+
+namespace Reversi_Namespace
 {
     partial class Form1
     {
@@ -76,7 +78,7 @@
             this.Speelveld.Location = new System.Drawing.Point(63, 173);
             this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(400, 400);
+            this.Speelveld.Size = new Size(400, 400);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
