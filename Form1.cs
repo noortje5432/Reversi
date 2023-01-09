@@ -80,6 +80,21 @@ namespace Reversi_Namespace
 
         }
 
+        static Tuple<int[], int[]> Mogelijkheden()
+        {
+            int[] MogelijkVoorX = new int[3];
+            int[] MogelijkVoorY = new int[3];
+
+            MogelijkVoorX[0] = -1;
+            MogelijkVoorY[0] = -1;
+            MogelijkVoorX[0] = 0;
+            MogelijkVoorY[0] = 0;
+            MogelijkVoorX[0] = 1;
+            MogelijkVoorY[0] = 1;
+
+            return new Tuple<int[], int[]>(MogelijkVoorX, MogelijkVoorY);
+        }
+
         private bool MagZet(int SteenX, int SteenY)
         {
             int Zet;
