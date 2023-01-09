@@ -154,14 +154,14 @@ namespace Reversi_Namespace
                 SteenY = j;
             }
 
-            if (steen[SteenX, SteenY] == nll && MagZet(SteenX, SteenY)
+            if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY))
                 LegaleZet = true;
             else
                 LegaleZet = false;
 
             if (LegaleZet == true)
             {
-                if (beurten % 2 == 0)
+                if (beurt % 2 == 0)
                 {
                     steen[SteenX, SteenY] = new Stenen(SteenX, SteenY, -1);
 
@@ -174,8 +174,8 @@ namespace Reversi_Namespace
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
                 Speelveld.Invalidate();
-                BlauwPunten.Text = AantalBlauweStenen() + "Blauwe stenen";
-                RodePunten.Text = AantalRodeStenen() + "Rode stenen";
+                //BlauwePunten.Text = AantalBlauweStenen() + "Blauwe stenen";
+                //RodePunten.Text = AantalRodeStenen() + "Rode stenen";
                 //Zet.Text = beurt();
                 //Zet.ForeColor = BeurtKleur();
                 //TekstLegaleZet.Text = "";*/
@@ -193,9 +193,8 @@ namespace Reversi_Namespace
             {
                 if (s == null)
                     continue;
-                else
-                    (s.KleurVanSteen == -1)
-                        AantalBlauw += 1;
+                if (s.KleurVanSteen == -1)
+                    AantalBlauw += 1;
             }
             return AantalBlauw.ToString();
         }
@@ -207,9 +206,8 @@ namespace Reversi_Namespace
             {
                 if (s == null)
                     continue;
-                else
-                    (s.KleurVanSteen == 1)
-                        AantalRood += 1;
+                if (s.KleurVanSteen == 1)
+                    AantalRood += 1;
             }
             return AantalRood.ToString();
         }
@@ -224,10 +222,10 @@ namespace Reversi_Namespace
 
         public Color KleurvanSpeler()
         {
-            if (beurt % == 0)
+            if (beurt % 2 == 0)
                 return Color.RoyalBlue;
             else
-                return Color.DarkGrayBlue;
+                return Color.DarkRed;
         }
 
 
