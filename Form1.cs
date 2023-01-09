@@ -38,6 +38,8 @@ namespace Reversi_Namespace
             return 400 / rij;
         }
 
+        private void begin
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             
