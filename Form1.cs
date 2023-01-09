@@ -15,6 +15,7 @@ namespace Reversi_Namespace
         public Form1()
         {
             InitializeComponent();
+            Beginopstelling();
             this.Speelveld.Paint += Tekenveld;
         }
 
@@ -38,7 +39,17 @@ namespace Reversi_Namespace
             return 400 / rij;
         }
 
-        private void begin
+        private void Beginopstelling()
+        {
+            int MiddenX = kol / 2;
+            int MiddenY = rij / 2;
+            steen[MiddenX, MiddenY] = new Stenen(MiddenX, MiddenY, -1);
+            steen[MiddenX, MiddenY -1] = new Stenen(MiddenX, MiddenY - 1, 1);
+            steen[MiddenX -1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
+            steen[MiddenX -1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1 , -1);
+
+
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
