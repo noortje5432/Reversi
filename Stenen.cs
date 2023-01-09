@@ -16,9 +16,9 @@ namespace Reversi_Namespace
         
         public Stenen(double KleurX, double KleurY, int KleurVanDeSteen)
         {
-            this.KleurX = Scherm.zoomx() * KleurX;
-            this.KleurY = Scherm.zoomy() * Kleur;
-            this.KleurVanDeSteen = KleurVanDeSteen;
+            this.KleurX = this.zoomx() * KleurX;
+            this.KleurY = this.zoomy() * Kleur;
+            this.KleurVanDeSteen = KleurVanDeSteen; 
         }
 
         public void tekenSteen(object o, PaintEventArgs pea) 
