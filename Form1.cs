@@ -72,7 +72,11 @@ namespace Reversi_Namespace
                 pea.Graphics.DrawLine(pen, Speelveld.Width / kol * i, 0, Speelveld.Width / kol * i, Speelveld.Height);
             for (int j = 0; j < rij + 2; j++)
                 pea.Graphics.DrawLine(pen, 0, Speelveld.Height / rij * j, Speelveld.Width, Speelveld.Height / rij * j);
-
+            foreach (Stenen s in steen)
+            {
+                if (s != null)
+                    s.tekenSteen(sender, pea);
+            }
 
         }
 
