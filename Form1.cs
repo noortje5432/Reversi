@@ -17,6 +17,7 @@ namespace Reversi_Namespace
         static int kol = 6;
         static int rij = 6;
         Stenen[,] steen;
+        int beurt = 0;
 
 
 
@@ -109,10 +110,28 @@ namespace Reversi_Namespace
                 {
                     int r = 1;
                     int t = 0;
-                    
-                    for (int x = SteenX + MogelijkheidX * r, int y = SteenY + Mogelijkheid * r ; x >= 0 && x < kol && y >= 0 && y < rij; r++, x = SteenX + MogelijkheidX * r, y = SteenY + Mogelijkheid * r  )
+
+                    for (int x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r;
+                         x >= 0 && x < kol && y >= 0 && y < rij;
+                         r++, x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r)
+                    {
+                        Stenen buurStenen = steen[x, y];
+                        if (buurStenen == null)
+                            break;
+                        if (buurStenen.KleurVanSteen != Zet)
+                            t++;
+                        else
+                        {
+                            if (t > 0)
+                                return true;
+                            else
+                                break;
+
+                        }
+                    }
                 }
             }
+            return false;
         }
 
         private void buttonNieuwSpel_Click(object sender, EventArgs e)
