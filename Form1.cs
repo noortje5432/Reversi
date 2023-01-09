@@ -19,9 +19,9 @@ namespace Reversi_Namespace
         }
 
         int grootte = 6;
-       // PictureBox[,] P;
-       static int kol = 6;
-       static int rij = 6;
+        // PictureBox[,] P;
+        static int kol = 6;
+        static int rij = 6;
 
         private void Form1_Load(object sender, EventArgs e)
         {
