@@ -14,6 +14,7 @@ namespace Reversi_Namespace
     public partial class Form1 : Form
     {
         int grootte = 6;
+
         // PictureBox[,] P;
         static int kol = 6;
         static int rij = 6;
@@ -36,7 +37,7 @@ namespace Reversi_Namespace
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         public static double schaalx()
@@ -54,23 +55,23 @@ namespace Reversi_Namespace
             int MiddenX = kol / 2;
             int MiddenY = rij / 2;
             steen[MiddenX, MiddenY] = new Stenen(MiddenX, MiddenY, -1);
-            steen[MiddenX, MiddenY -1] = new Stenen(MiddenX, MiddenY - 1, 1);
-            steen[MiddenX -1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
-            steen[MiddenX -1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1 , -1);
+            steen[MiddenX, MiddenY - 1] = new Stenen(MiddenX, MiddenY - 1, 1);
+            steen[MiddenX - 1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
+            steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, -1);
 
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void Tekenveld(object sender, PaintEventArgs pea)
         {
             Pen pen = new Pen(Color.Black, 5);
@@ -134,6 +135,7 @@ namespace Reversi_Namespace
                     }
                 }
             }
+
             return false;
         }
 
@@ -253,6 +255,55 @@ namespace Reversi_Namespace
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void Verkleuring(int SteenX, int SteenY)
+        {
+            int zet;
+            if (beurt % 2 == 0)
+                zet = 0;
+            else
+                zet = 1;
+            var Mogelijkheid = Mogelijkheden();
+            foreach (int MogelijkheidX in Mogelijkheid.Item1)
+            {
+                foreach (int MogelijkheidY in Mogelijkheid.Item2)
+                {
+                    int r = 1;
+                    int t = 0;
+
+                    for (int x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r;
+                         x >= 0 && x < kol && y >= 0 && y < rij;
+                         r++, x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r)
+                    {
+                        Stenen buurStenen = steen[x, y];
+                        if (MogelijkheidX == 0 && MogelijkheidY == 0)
+                            break;
+                        if (buurStenen == null)
+                            break;
+
+                        if (zet == 0)
+                        {
+                            if (buurStenen.KleurVanSteen == 1)
+                                t++;
+                            else if (buurStenen.KleurVanSteen == 0)
+                            {
+                                if (t > 0)
+                                {
+                                    while (t > 0)
+                                    {
+                                        steen[SteenX + MogelijkheidX * t, SteenY + MogelijkheidY * t].KleurVanSteen = 0;
+                                        t--;
+                                    }
+                                }
+                            }
+                            else
+                                break;
+                        }
+
+                    }
+                }
+            }
         }
     }
 }
