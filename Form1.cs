@@ -161,5 +161,35 @@ namespace Reversi_Namespace
         }
 
         public void Verkleuring(int SteenX, int SteenY)
+        {
+            int zet;
+            if (beurt % 2 == 0)
+                zet = 0;
+            else
+                zet = 1;
+            var Mogelijkheid = Mogelijkheden();
+            foreach (int MogelijkheidX in Mogelijkheid.Item1)
+            {
+                foreach (int MogelijkheidY in Mogelijkheid.Item2)
+                {
+                    int r = 1;
+                    int t = 0;
+
+                    for (int x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r;
+                         x >= 0 && x < kol && y >= 0 && y < rij;
+                         r++, x = SteenX + MogelijkheidX * r, y = SteenY + MogelijkheidY * r)
+                    {
+                        Stenen buurStenen = steen[x, y];
+                        if (MogelijkheidX == 0 && MogelijkheidY == 0)
+                            break;
+                        if (buurStenen == null)
+                            break;
+                        
+                        if (zet == 0)
+                        {
+                            if(buurStenen.)
+                        }
+
+                    }
     }
 }
