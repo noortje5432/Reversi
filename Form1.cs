@@ -15,6 +15,7 @@ namespace Reversi_Namespace
         public Form1()
         {
             InitializeComponent();
+            this.Speelveld.Paint += Tekenveld;
         }
 
         int grootte = 6;
@@ -22,9 +23,9 @@ namespace Reversi_Namespace
         int kol = 6;
         int rij = 6;
 
-        /*private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            P = new PictureBox[grootte, grootte];
+           /* P = new PictureBox[grootte, grootte];
             int links, top = 2;
             for (int x = 0; x < grootte; x++) 
             {
@@ -40,8 +41,8 @@ namespace Reversi_Namespace
                 }
                 top += 60;
             }
-            P[0, 0].BackColor = Color.Black;
-        }*/
+            P[0, 0].BackColor = Color.Black; */
+        }
 
 
 
@@ -57,12 +58,17 @@ namespace Reversi_Namespace
             
         }
 
-        /*private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void Tekenveld(object sender, PaintEventArgs pea)
         {
-            
+            Pen pen = new Pen(Color.Black, 5);
+            for (int i = 0; i < kol + 2; i++)
+                pea.Graphics.DrawLine(pen, Speelveld.Width / kol * i, 0, Speelveld.Width / kol * i, Speelveld.Height);
+            for (int j = 0; j < rij + 2; j++)
+                pea.Graphics.DrawLine(pen, 0, Speelveld.Height / rij * j, Speelveld.Width, Speelveld.Height / rij * j);
+
 
         }
-        */
+
         private void buttonNieuwSpel_Click(object sender, EventArgs e)
         {
 
