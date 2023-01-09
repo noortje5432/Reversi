@@ -22,7 +22,7 @@ namespace Reversi_Namespace
         int kol = 6;
         int rij = 6;
 
-        /*private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             P = new PictureBox[grootte, grootte];
             int links, top = 2;
@@ -41,7 +41,7 @@ namespace Reversi_Namespace
                 top += 60;
             }
             P[0, 0].BackColor = Color.Black;
-        }*/
+        }
 
 
 
