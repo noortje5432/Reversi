@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Reversi_Namespace
@@ -209,6 +210,22 @@ namespace Reversi_Namespace
                         AantalRood += 1;
             }
             return AantalRood.ToString();
+        }
+
+        public string WieIsAanDeBeurt()
+        {
+            if (beurt % 2 == 0)
+                return "Speler 1 (blauw) is aan de beurt.";
+            else
+                return "Speler 2 (rood) is aan de beurt.";
+        }
+
+        public Color KleurvanSpeler()
+        {
+            if (beurt % == 0)
+                return Color.RoyalBlue;
+            else
+                return Color.DarkGrayBlue;
         }
 
 
