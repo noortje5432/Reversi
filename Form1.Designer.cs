@@ -76,7 +76,7 @@
             this.Speelveld.Location = new System.Drawing.Point(55, 130);
             this.Speelveld.Margin = new System.Windows.Forms.Padding(4);
             this.Speelveld.Name = "Speelveld";
-            this.Speelveld.Size = new System.Drawing.Size(433, 397);
+            this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
