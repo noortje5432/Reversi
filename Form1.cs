@@ -19,6 +19,8 @@ namespace Reversi_Namespace
         static int rij = 6;
         Stenen[,] steen;
         int beurt = 0;
+        bool LegaleZet = false;
+        int pas = 0;
 
 
 
@@ -135,6 +137,82 @@ namespace Reversi_Namespace
 
             return false;
         }
+
+        private void Zet(object sender, MouseEventArgs mea)
+        {
+            int muiscoordx = mea.X;
+            int muiscoordy = mea.Y;
+            int SteenX = 0;
+            int SteenY = 0;
+            for (int i = kol - 1; muiscoordx < i * Speelveld.Width /kol; i--)
+            {
+                SteenX = i;
+            }
+            for (int j = rij - 1; muiscoordy < j * Speelveld.Height; j--)
+            {
+                SteenY = j;
+            }
+
+            if (steen[SteenX, SteenY] == nll && MagZet(SteenX, SteenY)
+                LegaleZet = true;
+            else
+                LegaleZet = false;
+
+            if (LegaleZet == true)
+            {
+                if (beurten % 2 == 0)
+                {
+                    steen[SteenX, SteenY] = new Stenen(SteenX, SteenY, -1);
+
+                }
+                else
+                {
+                    steen[SteenX, SteenY] = new Stenen(SteenX, SteenY, 1);
+                }
+                pas = 0;
+                Verkleuring(SteenX, SteenY);
+                beurt += 1;
+                Speelveld.Invalidate();
+                BlauwPunten.Text = AantalBlauweStenen() + "Blauwe stenen";
+                RodePunten.Text = AantalRodeStenen() + "Rode stenen";
+                //Zet.Text = beurt();
+                //Zet.ForeColor = BeurtKleur();
+                //TekstLegaleZet.Text = "";*/
+            }
+            /*else
+            {
+                TekstLegaleZet.Text = "Deze zet is illegaal!";
+            }*/
+        }
+
+        public string AantalBlauweStenen()
+        {
+            int AantalBlauw = 0;
+            foreach (Stenen s in steen)
+            {
+                if (s == null)
+                    continue;
+                else
+                    (s.KleurVanSteen == -1)
+                        AantalBlauw += 1;
+            }
+            return AantalBlauw.ToString();
+        }
+
+        public string AantalRodeStenen()
+        {
+            int AantalRood = 0;
+            foreach (Stenen s in steen)
+            {
+                if (s == null)
+                    continue;
+                else
+                    (s.KleurVanSteen == 1)
+                        AantalRood += 1;
+            }
+            return AantalRood.ToString();
+        }
+
 
         private void buttonNieuwSpel_Click(object sender, EventArgs e)
         {
