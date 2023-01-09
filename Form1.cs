@@ -25,28 +25,18 @@ namespace Reversi_Namespace
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           /* P = new PictureBox[grootte, grootte];
-            int links, top = 2;
-            for (int x = 0; x < grootte; x++) 
-            {
-                links = 2;
-                for (int y = 0; y < grootte; y++) 
-                {
-                    P[x, y] = new PictureBox();
-                    P[x, y].BackColor = Color.FromArgb(255, 245, 152);
-                    P[x, y].Location = new Point(links, top);
-                    P[x, y].Size = new Size(55, 55);
-                    links += 60; 
-                    Speelveld.Controls.Add(P[x, y]);
-                }
-                top += 60;
-            }
-            P[0, 0].BackColor = Color.Black; */
+           
         }
 
+        public double schaalx()
+        {
+            return Speelveld.Width / kol;
+        }
 
-
-        
+        public double schaaly()
+        {
+            return Speelveld.Height / rij;
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -57,7 +47,7 @@ namespace Reversi_Namespace
         {
             
         }
-
+        
         private void Tekenveld(object sender, PaintEventArgs pea)
         {
             Pen pen = new Pen(Color.Black, 5);
