@@ -13,6 +13,7 @@ namespace Reversi_Namespace
     public partial class Form1 : Form
     {
         int grootte = 6;
+
         // PictureBox[,] P;
         static int kol = 6;
         static int rij = 6;
@@ -33,7 +34,7 @@ namespace Reversi_Namespace
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         public static double schaalx()
@@ -51,23 +52,23 @@ namespace Reversi_Namespace
             int MiddenX = kol / 2;
             int MiddenY = rij / 2;
             steen[MiddenX, MiddenY] = new Stenen(MiddenX, MiddenY, -1);
-            steen[MiddenX, MiddenY -1] = new Stenen(MiddenX, MiddenY - 1, 1);
-            steen[MiddenX -1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
-            steen[MiddenX -1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1 , -1);
+            steen[MiddenX, MiddenY - 1] = new Stenen(MiddenX, MiddenY - 1, 1);
+            steen[MiddenX - 1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
+            steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, -1);
 
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void Tekenveld(object sender, PaintEventArgs pea)
         {
             Pen pen = new Pen(Color.Black, 5);
@@ -131,6 +132,7 @@ namespace Reversi_Namespace
                     }
                 }
             }
+
             return false;
         }
 
@@ -184,12 +186,29 @@ namespace Reversi_Namespace
                             break;
                         if (buurStenen == null)
                             break;
-                        
+
                         if (zet == 0)
                         {
-                            if(buurStenen.)
+                            if (buurStenen.KleurVanSteen == 1)
+                                t++;
+                            else if (buurStenen.KleurVanSteen == 0)
+                            {
+                                if (t > 0)
+                                {
+                                    while (t > 0)
+                                    {
+                                        steen[SteenX + MogelijkheidX * t, SteenY + MogelijkheidY * t].KleurVanSteen = 0;
+                                        t--;
+                                    }
+                                }
+                            }
+                            else
+                                break;
                         }
 
                     }
+                }
+            }
+        }
     }
 }
