@@ -159,5 +159,7 @@ namespace Reversi_Namespace
         {
 
         }
+
+        public void Verkleuring(int SteenX, int SteenY)
     }
 }
