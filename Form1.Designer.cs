@@ -81,6 +81,7 @@ namespace Reversi_Namespace
             this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.Speelveld.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ZetSteen);
             // 
             // Form1
             // 
