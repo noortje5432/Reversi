@@ -171,16 +171,44 @@ namespace Reversi_Namespace
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
                 Speelveld.Invalidate();
-                /*BlauwPunten.Text = AantalBlauw() + "Blauwe stenen";
-                RodePunten.Text = AantalRood() + "Rode stenen";
-                Zet.Text = beurt();
-                Zet.ForeColor = BeurtKleur();
-                TekstLegaleZet.Text = "";*/
+                BlauwPunten.Text = AantalBlauweStenen() + "Blauwe stenen";
+                RodePunten.Text = AantalRodeStenen() + "Rode stenen";
+                //Zet.Text = beurt();
+                //Zet.ForeColor = BeurtKleur();
+                //TekstLegaleZet.Text = "";*/
             }
             /*else
             {
                 TekstLegaleZet.Text = "Deze zet is illegaal!";
             }*/
+        }
+
+        public string AantalBlauweStenen()
+        {
+            int AantalBlauw = 0;
+            foreach (Stenen s in steen)
+            {
+                if (s == null)
+                    continue;
+                else
+                    (s.KleurVanSteen == -1)
+                        AantalBlauw += 1;
+            }
+            return AantalBlauw.ToString();
+        }
+
+        public string AantalRodeStenen()
+        {
+            int AantalRood = 0;
+            foreach (Stenen s in steen)
+            {
+                if (s == null)
+                    continue;
+                else
+                    (s.KleurVanSteen == 1)
+                        AantalRood += 1;
+            }
+            return AantalRood.ToString();
         }
 
 
