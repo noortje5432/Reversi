@@ -12,12 +12,12 @@ namespace Reversi_Namespace
     {
         Brush Kleur;
         public int KleurVanSteen;
-        double KleurX, KleurY; 
+        double MiddenX, MiddenY; 
         
-        public Stenen(double KleurX, double KleurY, int KleurVanDeSteen)
+        public Stenen(double MiddenX, double MiddenY, int KleurVanDeSteen)
         {
-            this.KleurX = Form1.schaalx() * KleurX;
-            this.KleurY = Form1.schaaly() * Kleur;
+            this.MiddenX = Form1.schaalx() * MiddenX;
+            this.MiddenY = Form1.schaaly() * MiddenY;
             this.KleurVanSteen = KleurVanDeSteen; 
         }
 
@@ -29,7 +29,7 @@ namespace Reversi_Namespace
                 Kleur = Brushes.RoyalBlue;
             if (KleurVanSteen == 1)
                 Kleur = Brushes.DarkRed;
-            pea.Graphics.FillEllipse(Kleur, (float)KleurX + 5, (float)KleurY, maatx, maaty);
+            pea.Graphics.FillEllipse(Kleur, (float)MiddenX + 5, (float)MiddenY, maatx, maaty);
         }
     }
 }
