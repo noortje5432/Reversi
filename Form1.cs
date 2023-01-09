@@ -12,17 +12,21 @@ namespace Reversi_Namespace
 {
     public partial class Form1 : Form
     {
+        int grootte = 6;
+        // PictureBox[,] P;
+        static int kol = 6;
+        static int rij = 6;
+        Stenen[,] steen;
+
         public Form1()
         {
+            steen = new Stenen[kol, rij];
             InitializeComponent();
             Beginopstelling();
             this.Speelveld.Paint += Tekenveld;
         }
 
-        int grootte = 6;
-        // PictureBox[,] P;
-        static int kol = 6;
-        static int rij = 6;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
