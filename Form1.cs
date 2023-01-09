@@ -13,9 +13,6 @@ namespace Reversi_Namespace
 {
     public partial class Form1 : Form
     {
-        int grootte = 6;
-
-        // PictureBox[,] P;
         static int kol = 6;
         static int rij = 6;
         Stenen[,] steen;
@@ -139,7 +136,7 @@ namespace Reversi_Namespace
             return false;
         }
 
-        private void Zet(object sender, MouseEventArgs mea)
+        private void ZetSteen(object sender, MouseEventArgs mea)
         {
             int muiscoordx = mea.X;
             int muiscoordy = mea.Y;
