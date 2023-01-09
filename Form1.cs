@@ -288,7 +288,7 @@ namespace Reversi_Namespace
                 //BlauwePunten.Text = AantalBlauweStenen() + "Blauwe stenen";
                 //RodePunten.Text = AantalRodeStenen() + "Rode stenen";
                 //Zet.Text = beurt();
-                Zet.ForeColor = BeurtKleur();
+                //Zet.ForeColor = BeurtKleur();
                 //TekstLegaleZet.Text = "";*/
             }
             /*else
