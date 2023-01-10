@@ -88,12 +88,18 @@ namespace Reversi_Namespace
                 if (s != null)
                     s.tekenSteen(sender, pea);
             }
+
+            if (passen() == true)
+            {
+
+            }
+
             //Hier wordt gekeken waar de hulpcirkels moeten.
             for (int i = 0; i < kol; i++)
             {
                 for (int j = 0; j < rij; j++)
-                { 
-                    if (steen[i,j] == null && help % 2 == 1 && MagZet(i, j) != false)
+                {
+                    if (steen[i, j] == null && help % 2 == 1 && MagZet(i, j) != false)
                     {
                         pea.Graphics.DrawEllipse(pen, i * 400 / kol + 9, j * 400 / rij + 9, 400 / kol - 18, 400 / rij - 18);
                     }
@@ -313,14 +319,14 @@ namespace Reversi_Namespace
             int SteenY = 0;
             for (int i = kol; muiscoordx < i * Speelveld.Width / kol; i--)
             {
-                SteenX = i -1;
+                SteenX = i - 1;
             }
             for (int j = rij; muiscoordy < j * Speelveld.Height / rij; j--)
             {
-                SteenY = j -1;
+                SteenY = j - 1;
             }
 
-            if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY)==true)
+            if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY) == true)
                 LegaleZet = true;
             else
                 LegaleZet = false;
@@ -338,12 +344,12 @@ namespace Reversi_Namespace
                 }
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
-                
+
                 if (AantalBlauweStenen() == 1)
                     BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
                 else
                     BlauwePunten.Text = $"{AantalBlauweStenen()} stenen";
-                
+
                 if (AantalRodeStenen() == 1)
                     RodePunten.Text = $"{AantalRodeStenen()} steen";
                 else
@@ -369,5 +375,22 @@ namespace Reversi_Namespace
                 IllegaleZet.Text = "Deze zet is illegaal!";
             }
         }
+
+        private bool passen()
+        {
+            for (int i = 0; i < kol; i++)
+            {
+                for (int j = 0; j < rij; j++)
+                {
+                    if ((steen[i, j] == null && MagZet(i, j) != false) == true)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+            }
+        }
+
     }
 }
