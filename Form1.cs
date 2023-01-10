@@ -87,10 +87,10 @@ namespace Reversi_Namespace
 
             MogelijkheidX[0] = -1;
             MogelijkheidY[0] = -1;
-            MogelijkheidX[0] = 0;
-            MogelijkheidY[0] = 0;
-            MogelijkheidX[0] = 1;
-            MogelijkheidY[0] = 1;
+            MogelijkheidX[1] = 0;
+            MogelijkheidY[1] = 0;
+            MogelijkheidX[2] = 1;
+            MogelijkheidY[2] = 1;
 
             return new Tuple<int[], int[]>(MogelijkheidX, MogelijkheidY);
         }
@@ -199,11 +199,7 @@ namespace Reversi_Namespace
 
         public void Verkleuring(int SteenX, int SteenY)
         {
-            int zet;
-            if (beurt % 2 == 0)
-                zet = 0;
-            else
-                zet = 1;
+            var zet = beurt % 2 == 0 ? 0 : 1;
             var Mogelijkheid = Mogelijkheden();
             foreach (int MogelijkheidX in Mogelijkheid.Item1)
             {
@@ -279,7 +275,7 @@ namespace Reversi_Namespace
                 SteenY = j;
             }
 
-            if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY))
+            if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY)==true)
                 LegaleZet = true;
             else
                 LegaleZet = false;
