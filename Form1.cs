@@ -266,13 +266,13 @@ namespace Reversi_Namespace
             int muiscoordy = mea.Y;
             int SteenX = 0;
             int SteenY = 0;
-            for (int i = kol - 1; muiscoordx < i * Speelveld.Width / kol; i--)
+            for (int i = kol; muiscoordx < i * Speelveld.Width / kol; i--)
             {
-                SteenX = i;
+                SteenX = i -1;
             }
-            for (int j = rij - 1; muiscoordy < j * Speelveld.Height; j--)
+            for (int j = rij; muiscoordy < j * Speelveld.Height / rij; j--)
             {
-                SteenY = j;
+                SteenY = j -1;
             }
 
             if (steen[SteenX, SteenY] == null && MagZet(SteenX, SteenY)==true)
