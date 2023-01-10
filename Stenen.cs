@@ -10,7 +10,6 @@ namespace Reversi_Namespace
 {
     class Stenen
     {
-        Brush Kleur;
         public int KleurVanSteen;
         double MiddenX, MiddenY; 
         
@@ -26,10 +25,10 @@ namespace Reversi_Namespace
             float maatx = (float)Form1.schaalx() - 10;
             float maaty = (float)Form1.schaaly() - 10;
             if (KleurVanSteen == 0)
-                Kleur = Brushes.RoyalBlue;
+                pea.Graphics.FillEllipse(Brushes.RoyalBlue, (float)MiddenX + 5, (float)MiddenY + 5, maatx, maaty);
             if (KleurVanSteen == 1)
-                Kleur = Brushes.DarkRed;
-            pea.Graphics.FillEllipse(Kleur, (float)MiddenX + 5, (float)MiddenY + 5, maatx, maaty);
+                pea.Graphics.FillEllipse(Brushes.DarkRed, (float)MiddenX + 5, (float)MiddenY + 5, maatx, maaty);
+
         }
     }
 }
