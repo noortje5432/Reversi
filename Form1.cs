@@ -161,7 +161,7 @@ namespace Reversi_Namespace
         } 
 
 
-        public string AantalBlauweStenen()
+        public int AantalBlauweStenen()
         {
             int AantalBlauw = 0;
             foreach (Stenen s in steen)
@@ -171,10 +171,10 @@ namespace Reversi_Namespace
                 if (s.KleurVanSteen == 0)
                     AantalBlauw += 1;
             }
-            return AantalBlauw.ToString();
+            return AantalBlauw;
         }
 
-        public string AantalRodeStenen()
+        public int AantalRodeStenen()
         {
             int AantalRood = 0;
             foreach (Stenen s in steen)
@@ -184,7 +184,7 @@ namespace Reversi_Namespace
                 if (s.KleurVanSteen == 1)
                     AantalRood += 1;
             }
-            return AantalRood.ToString();
+            return AantalRood;
         }
 
         public string WieIsAanDeBeurt()
@@ -359,8 +359,14 @@ namespace Reversi_Namespace
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
-                BlauwePunten.Text = AantalBlauweStenen() + " blauwe stenen";
-                RodePunten.Text = AantalRodeStenen() + " rode stenen";
+                if (AantalBlauweStenen() == 1)
+                    BlauwePunten.Text = $"{AantalBlauweStenen()} +  steen";
+                else
+                    BlauwePunten.Text = $"{AantalBlauweStenen()} +  stenen";
+                if (AantalRodeStenen() == 1)
+                    RodePunten.Text = $"{AantalRodeStenen()} +  steen";
+                else
+                    RodePunten.Text = $"{AantalRodeStenen()} +  stenen";
                 Speelveld.Invalidate();
                 SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
                 IllegaleZet.Text = "";
