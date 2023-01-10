@@ -367,7 +367,7 @@ namespace Reversi_Namespace
                 SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
                 IllegaleZet.Text = "";
 
-                if (beurt == 3)//== kol * rij - 4)
+                if (beurt == kol * rij - 5)
                 {
                     if (AantalBlauweStenen() > AantalRodeStenen())
                         Winnaar.Text = "Speler 1 (blauw) heeft gewonnen!";
