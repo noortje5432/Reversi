@@ -74,7 +74,7 @@ namespace Reversi_Namespace
             "8 bij 8",
             "10 bij 10"});
             this.GrootteVeld.Location = new System.Drawing.Point(406, 103);
-            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5);
             this.GrootteVeld.Name = "GrootteVeld";
             this.GrootteVeld.Size = new System.Drawing.Size(151, 28);
             this.GrootteVeld.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace Reversi_Namespace
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Speelveld.Location = new System.Drawing.Point(63, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
             this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
@@ -94,13 +94,13 @@ namespace Reversi_Namespace
             // Winnaar
             // 
             this.Winnaar.AutoSize = true;
-            this.Winnaar.BackColor = System.Drawing.Color.Transparent;
+            this.Winnaar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Winnaar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Winnaar.Location = new System.Drawing.Point(72, 11);
+            this.Winnaar.Location = new System.Drawing.Point(235, 145);
             this.Winnaar.Name = "Winnaar";
-            this.Winnaar.Size = new System.Drawing.Size(16, 23);
+            this.Winnaar.Size = new System.Drawing.Size(21, 23);
             this.Winnaar.TabIndex = 10;
-            this.Winnaar.Text = " ";
+            this.Winnaar.Text = "1";
             // 
             // Stand
             // 
