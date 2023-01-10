@@ -13,13 +13,14 @@ namespace Reversi_Namespace
 {
     public partial class Form1 : Form
     {
+        //Hieronder benoemen wij gebruikte variabelen
         static int kol = 6;
         static int rij = 6;
         Stenen[,] steen;
         bool LegaleZet = false;
         int help, pas, beurt = 0;
 
-
+        //Hier laden wij onze beginopstelling en andere componenten op de form.
         public Form1()
         {
             steen = new Stenen[kol, rij];
@@ -28,12 +29,6 @@ namespace Reversi_Namespace
             this.Speelveld.Paint += Tekenveld;
         }
 
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public static double schaalx()
         {
