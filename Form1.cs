@@ -78,9 +78,8 @@ namespace Reversi_Namespace
             for (int i = 0; i < kol; i++)
             {
                 for (int j = 0; j < rij; j++)
-                {
-                    //bool v = MagZet(i, j);
-                    if (steen[i,j] == null && help % 2 == 1 && MagZet(i, j) != false)// && steen[i, j] == null && help % 2 == 0)
+                { 
+                    if (steen[i,j] == null && help % 2 == 1 && MagZet(i, j) != false)
                     {
                         pea.Graphics.DrawEllipse(pen, i * 400 / kol + 9, j * 400 / rij + 9, 400 / kol - 18, 400 / rij - 18);
                     }
