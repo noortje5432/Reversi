@@ -8,11 +8,14 @@ using System.Windows.Forms;
 
 namespace Reversi_Namespace
 {
+    //De klasse stenen is aangemaakt om naar de stenen te refereren.
     class Stenen
     {
         public int KleurVanSteen;
         double MiddenX, MiddenY; 
-        
+
+        //Hier wordt de schaal gegeven, zodat de stenen altijd in het midden van de vakjes staan. 
+        //We halen de schaal uit Form_1
         public Stenen(double MiddenX, double MiddenY, int KleurVanDeSteen)
         {
             this.MiddenX = Form1.schaalx() * MiddenX;
@@ -20,6 +23,7 @@ namespace Reversi_Namespace
             this.KleurVanSteen = KleurVanDeSteen; 
         }
 
+        //Hier worden de stenen daadwerkelijk getekend. Blauw wordt aangegeven met 0 en rood met 1.
         public void tekenSteen(object o, PaintEventArgs pea) 
         {
             float maatx = (float)Form1.schaalx() - 10;

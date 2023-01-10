@@ -51,7 +51,7 @@ namespace Reversi_Namespace
             this.NieuwSpel.TabIndex = 0;
             this.NieuwSpel.Text = "Nieuw Spel";
             this.NieuwSpel.UseVisualStyleBackColor = true;
-            this.NieuwSpel.Click += new System.EventHandler(this.button1_Click);
+            this.NieuwSpel.Click += new System.EventHandler(this.NieuwSpelStarten);
             // 
             // Help
             // 
@@ -145,7 +145,7 @@ namespace Reversi_Namespace
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(618, 739);
+            this.ClientSize = new System.Drawing.Size(503, 614);
             this.Controls.Add(this.IllegaleZet);
             this.Controls.Add(this.SpelerBeurt);
             this.Controls.Add(this.RodePunten);

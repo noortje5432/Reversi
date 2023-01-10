@@ -16,7 +16,7 @@ namespace Reversi_Namespace
         //Hieronder benoemen wij gebruikte variabelen
         static int kol = 6;
         static int rij = 6;
-        Stenen[,] steen;
+        Stenen[,] steen;                //Dit wordt de array waar alle stenen in staan. 
         bool LegaleZet = false;
         int help, pas, beurt, BeurtenGepast = 0;
 
@@ -30,8 +30,7 @@ namespace Reversi_Namespace
             this.Speelveld.Paint += Tekenveld;
         }
 
-        //In deze methodes worden onze speelstenen op de juiste plek op het bord gezet tenzame met de juiste grootte.
-
+        //In deze methodes worden onze speelstenen op de juiste plek op het bord gezet tezamen met de juiste grootte.
         public static double schaalx()
         {
             return 400 / kol;
@@ -54,12 +53,13 @@ namespace Reversi_Namespace
             steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, 0);
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        //Er wordt een nieuw spel aangemaakt, door op de knop 'nieuw spel' te klikken. 
+        private void NieuwSpelStarten(object sender, EventArgs e)
         {
             SpeelbordLeeg(sender, e);
         }
 
+        //Hier worden alle stenen van het bord verwijderd en gebruikte waarden gereset.
         private void SpeelbordLeeg(object sender, EventArgs e)
         {
             Array.Clear(steen, 0, steen.Length);
@@ -75,7 +75,8 @@ namespace Reversi_Namespace
 
         }
 
-        //Met deze methode wordt op het speelveld de benodigde lijnen getekend, worden stenen getekend en worden de hulpcirkels getekend.
+        //Met deze methode worden op het speelveld de benodigde lijnen getekend, worden stenen getekend
+        //en worden de hulpcirkels getekend.
         //De benodigde lijnen worden getekend met behulp van twee for-loops.
         private void Tekenveld(object sender, PaintEventArgs pea)
         {
@@ -90,6 +91,9 @@ namespace Reversi_Namespace
                     s.tekenSteen(sender, pea);
             }
 
+            //We maken een lijst om te kijken of er nog mogelijke zetten zijn. 
+            //Zodra er een getal (1, willekeurig gekozen) wordt toegevoegd, geldt er dus dat er nog een zet mogelijk is. 
+            //Er wordt dus niet gepast. 
             List<int> Mogelijkheid= new List<int>();
 
             for (int i = 0; i < kol; i++)
@@ -107,6 +111,7 @@ namespace Reversi_Namespace
                 }
             }
 
+            //Als er geen een zet mogelijk is, zal hier de beurt naar de andere speler overgaan. 
             if (Mogelijkheid.Count == 0)
             {
                 beurt++;
@@ -127,7 +132,8 @@ namespace Reversi_Namespace
             }
         }
 
-        //Hier zijn alle mogelijke stenen die om de speler zijn steen mogelijk zijn om eventueel te plaatsen.
+        //Hier zijn alle mogelijke stenen om de aangeklikte steen van de speler.
+        ///Hiermee wordt gekeken welke stenen van kleur moeten veranderen. 
         static Tuple<int[], int[]> Mogelijkheden()
         {
             int[] MogelijkheidX = new int[3];
@@ -149,7 +155,8 @@ namespace Reversi_Namespace
             int Zet;
             Zet = beurt % 2 == 0 ? 0 : 1;
             var Mogelijkheid = Mogelijkheden();
-            //Hier wordt gekeken in alle mogelijke richtingen of er een eventuele steen geplaatst kan worden door middel van een for-loop.
+            //Hier wordt gekeken in alle mogelijke richtingen of er een eventuele steen geplaatst kan worden
+            //door middel van een for-loop.
             //Als dit mogelijk is worden de coordinaten tot een steen gemaakt en wordt een kleur geven aan de steen.
             foreach (int MogelijkheidX in Mogelijkheid.Item1)
             {
@@ -182,7 +189,6 @@ namespace Reversi_Namespace
         }
 
         //Hier worden het aantal blauwe stenen op het bord geteld.
-
         public int AantalBlauweStenen()
         {
             int AantalBlauw = 0;
@@ -210,6 +216,7 @@ namespace Reversi_Namespace
             return AantalRood;
         }
 
+        //Onderin staat wie er aan de beurt is. 
         public string WieIsAanDeBeurt()
         {
             if (beurt % 2 == 1)
@@ -218,8 +225,8 @@ namespace Reversi_Namespace
                 return "Speler 2 (rood) is aan de beurt.";
         }
 
-
-
+        //Als er op de help-knop wordt geklikt, zullen de hulpcirkels op het bord verschijnen.
+        //Bij nog een keer klikken zullen deze hulpcirkels weer verdwijnen. 
         private void HelpKnop(object sender, EventArgs e)
         {
             help++;
@@ -227,8 +234,7 @@ namespace Reversi_Namespace
         }
 
         //Hier worden de cirkels boven het speelvlak getekend.
-        //Deze dienen slechts als decoratie en worden niet interacitef gebruikt.
-
+        //Deze dienen slechts als decoratie en worden niet interactief gebruikt.
         private void ScoreCirkels(object sender, PaintEventArgs e)
         {
             e.Graphics.FillEllipse(Brushes.RoyalBlue, 5, 5, 50, 50);
@@ -263,7 +269,7 @@ namespace Reversi_Namespace
             SpeelbordLeeg(sender, e);
         }
 
-        //Deze methode verandert de kleur van de stenen. Deze methode lijkt erg op de methode "magzet".
+        //Deze methode verandert de kleur van de stenen.
         public void Verkleuring(int SteenX, int SteenY)
         {
             var zet = beurt % 2 == 0 ? 0 : 1;
@@ -284,7 +290,7 @@ namespace Reversi_Namespace
                             break;
                         if (buurStenen == null)
                             break;
-                        //In dit stuk kijk het programma wie er aan de beurt is, zodat de stenen naar de goede kleur kunnen veranderen.
+                        //In dit stuk kijkt het programma wie er aan de beurt is, zodat de stenen naar de goede kleur kunnen veranderen.
                         //Er wordt hier ook gekeken hoeveel stenen er moeten veranderen.
                         if (zet == 0)
                         {
@@ -329,7 +335,8 @@ namespace Reversi_Namespace
         }
 
         //In deze methode wordt de steen gezet door middel van een muisklik.
-        //Eerst wordt er door middel van twee for-loops gekeken waar er wordt geklikt, en deze worden later gematched met de steen array.
+        //Eerst wordt er door middel van twee for-loops gekeken waar er wordt geklikt,
+        //en deze worden later gematched met de steen array.
         private void ZetSteen(object sender, MouseEventArgs mea)
         {
             int muiscoordx = mea.X;
@@ -364,8 +371,9 @@ namespace Reversi_Namespace
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
 
-                //In dit deel van de methode worden de teksten aangepast die corresponderen met het aantal blauwe en rode stenen boven het speelveld.
-                //Ook wordt hier de teksten over de beurten en de teksten over de eindstand aangepast.
+                //In dit deel van de methode worden de teksten aangepast die corresponderen met het aantal
+                //blauwe en rode stenen boven het speelveld.
+                //Ook worden hier de teksten over de beurten en de teksten over de eindstand aangepast.
                 if (AantalBlauweStenen() == 1)
                     BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
                 else
