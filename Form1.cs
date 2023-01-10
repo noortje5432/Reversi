@@ -88,7 +88,7 @@ namespace Reversi_Namespace
                 if (s != null)
                     s.tekenSteen(sender, pea);
             }
-            //Hier wordt gekeken waar de hulcirkels moeten.
+            //Hier wordt gekeken waar de hulpcirkels moeten.
             for (int i = 0; i < kol; i++)
             {
                 for (int j = 0; j < rij; j++)
@@ -99,7 +99,20 @@ namespace Reversi_Namespace
                     }
                 }
             }
-            
+
+            for (int i = 0; i < kol; i++)
+            {
+                for (int j = 0; j < rij; j++)
+                {
+                    if ((steen[i, j] == null && MagZet(i, j) != false) == true)
+                    {
+                        pas++;
+                    }
+                }
+            }
+
+            if (pas > 0)
+                beurt++;
         }
 
         static Tuple<int[], int[]> Mogelijkheden()
@@ -381,7 +394,7 @@ namespace Reversi_Namespace
                         Winnaar.Text = "Remise";
                 }
 
-                beurt += 1;
+                beurt++;
             }
             else
             {
