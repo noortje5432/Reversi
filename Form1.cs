@@ -309,8 +309,8 @@ namespace Reversi_Namespace
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
                 Speelveld.Invalidate();
-                //BlauwePunten.Text = AantalBlauweStenen() + "Blauwe stenen";
-                //RodePunten.Text = AantalRodeStenen() + "Rode stenen";
+                BlauwePunten.Text = AantalBlauweStenen() + "Blauwe stenen";
+                RodePunten.Text = AantalRodeStenen() + "Rode stenen";
                 //Zet.Text = beurt();
                 //Zet.ForeColor = BeurtKleur();
                 //TekstLegaleZet.Text = "";*/
