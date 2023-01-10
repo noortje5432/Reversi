@@ -99,20 +99,6 @@ namespace Reversi_Namespace
                     }
                 }
             }
-
-            for (int i = 0; i < kol; i++)
-            {
-                for (int j = 0; j < rij; j++)
-                {
-                    if ((steen[i, j] == null && MagZet(i, j) != false) == true)
-                    {
-                        pas++;
-                    }
-                }
-            }
-
-            if (pas > 0)
-                beurt++;
         }
 
         static Tuple<int[], int[]> Mogelijkheden()
