@@ -102,6 +102,7 @@ namespace Reversi_Namespace
             
         }
 
+        //Hier zijn alle mogelijke stenen die om de speler zijn steen mogelijk zijn om eventueel te plaatsen.
         static Tuple<int[], int[]> Mogelijkheden()
         {
             int[] MogelijkheidX = new int[3];
@@ -117,12 +118,14 @@ namespace Reversi_Namespace
             return new Tuple<int[], int[]>(MogelijkheidX, MogelijkheidY);
         }
 
+        //In deze methode wordt gekeken of de stenen ingesloten zijn, en daarmee ook of de steen gezet mag worden.
         private bool MagZet(int SteenX, int SteenY)
         {
             int Zet;
             Zet = beurt % 2 == 0 ? 0 : 1;
             var Mogelijkheid = Mogelijkheden();
-
+            //Hier wordt gekeken in alle mogelijke richtingen of er een eventuele steen geplaatst kan worden door middel van een for-loop.
+            //Als dit mogelijk is worden de coordinaten tot een steen gemaakt en wordt een kleur geven aan de steen.
             foreach (int MogelijkheidX in Mogelijkheid.Item1)
             {
                 foreach (int MogelijkheidY in Mogelijkheid.Item2)
@@ -153,12 +156,7 @@ namespace Reversi_Namespace
             return false;
         }
 
-        private void grootteveld()
-        {
-            
-
-        } 
-
+        //Hier worden het aantal blauwe stenen op het bord geteld.
 
         public int AantalBlauweStenen()
         {
@@ -173,6 +171,7 @@ namespace Reversi_Namespace
             return AantalBlauw;
         }
 
+        //Hier worden het aantal rode stenen op het bord geteld.
         public int AantalRodeStenen()
         {
             int AantalRood = 0;
@@ -194,25 +193,8 @@ namespace Reversi_Namespace
                 return "Speler 2 (rood) is aan de beurt.";
         }
 
-        public Color KleurvanSpeler()
-        {
-            if (beurt % 2 == 0)
-                return Color.RoyalBlue;
-            else
-                return Color.DarkRed;
-        }
 
 
-        private void buttonNieuwSpel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Paint(object sender, PaintEventArgs e)
-        {
-            SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
-            e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
-        }
 
         private void HelpKnop(object sender, EventArgs e)
         {
