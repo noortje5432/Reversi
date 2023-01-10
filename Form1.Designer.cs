@@ -73,7 +73,7 @@ namespace Reversi_Namespace
             "8 bij 8",
             "10 bij 10"});
             this.GrootteVeld.Location = new System.Drawing.Point(406, 103);
-            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5);
             this.GrootteVeld.Name = "GrootteVeld";
             this.GrootteVeld.Size = new System.Drawing.Size(151, 28);
             this.GrootteVeld.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Reversi_Namespace
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Speelveld.Location = new System.Drawing.Point(63, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
             this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
@@ -106,9 +106,9 @@ namespace Reversi_Namespace
             this.BlauwePunten.ForeColor = System.Drawing.Color.RoyalBlue;
             this.BlauwePunten.Location = new System.Drawing.Point(123, 45);
             this.BlauwePunten.Name = "BlauwePunten";
-            this.BlauwePunten.Size = new System.Drawing.Size(259, 39);
+            this.BlauwePunten.Size = new System.Drawing.Size(145, 39);
             this.BlauwePunten.TabIndex = 6;
-            this.BlauwePunten.Text = "2 blauwe punten";
+            this.BlauwePunten.Text = "2 stenen";
             // 
             // RodePunten
             // 
@@ -117,9 +117,9 @@ namespace Reversi_Namespace
             this.RodePunten.ForeColor = System.Drawing.Color.DarkRed;
             this.RodePunten.Location = new System.Drawing.Point(123, 105);
             this.RodePunten.Name = "RodePunten";
-            this.RodePunten.Size = new System.Drawing.Size(221, 39);
+            this.RodePunten.Size = new System.Drawing.Size(145, 39);
             this.RodePunten.TabIndex = 7;
-            this.RodePunten.Text = "2 rode punten";
+            this.RodePunten.Text = "2 stenen";
             // 
             // SpelerBeurt
             // 
