@@ -16,10 +16,8 @@ namespace Reversi_Namespace
         static int kol = 6;
         static int rij = 6;
         Stenen[,] steen;
-        int beurt = 0;
         bool LegaleZet = false;
-        int pas = 0;
-
+        int pas, help, beurt = 0;
 
 
         public Form1()
@@ -55,8 +53,7 @@ namespace Reversi_Namespace
             steen[MiddenX, MiddenY - 1] = new Stenen(MiddenX, MiddenY - 1, 1);
             steen[MiddenX - 1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
             steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, 0);
-
-
+            steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, 0);
         }
 
 
@@ -76,6 +73,18 @@ namespace Reversi_Namespace
             {
                 if (s != null)
                     s.tekenSteen(sender, pea);
+            }
+
+            for (int i = 0; i < kol; i++)
+            {
+                for (int j = 0; j < rij; j++)
+                {
+                    bool v = MagZet(i, j);
+                    if (v == true && steen[i, j] == null && help % 2 == 1)
+                    {
+                        pea.Graphics.DrawEllipse(pen, 400 / kol + 5, 400 / rij + 5, 400 / kol - 5, 400 / rij - 5);
+                    }
+                }
             }
 
         }
@@ -189,7 +198,8 @@ namespace Reversi_Namespace
 
         private void HelpKnop(object sender, EventArgs e)
         {
-
+            help++;
+            Speelveld.Invalidate();
         }
 
         private void button3_Click(object sender, EventArgs e)
