@@ -79,14 +79,14 @@ namespace Reversi_Namespace
             {
                 for (int j = 0; j < rij; j++)
                 {
-                    bool v = MagZet(i, j);
-                    if (v == true && steen[i, j] == null && help % 2 == 1)
+                    //bool v = MagZet(i, j);
+                    if (steen[i,j] == null && help % 2 == 1 && MagZet(i, j) != false)// && steen[i, j] == null && help % 2 == 0)
                     {
-                        pea.Graphics.DrawEllipse(pen, 400 / kol + 5, 400 / rij + 5, 400 / kol - 5, 400 / rij - 5);
+                        pea.Graphics.DrawEllipse(pen, i * 400 / kol + 9, j * 400 / rij + 9, 400 / kol - 18, 400 / rij - 18);
                     }
                 }
             }
-
+            
         }
 
         static Tuple<int[], int[]> Mogelijkheden()
@@ -132,7 +132,6 @@ namespace Reversi_Namespace
                                 return true;
                             else
                                 break;
-
                         }
                     }
                 }
