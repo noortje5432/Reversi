@@ -39,6 +39,8 @@ namespace Reversi_Namespace
             this.RodePunten = new System.Windows.Forms.Label();
             this.SpelerBeurt = new System.Windows.Forms.Label();
             this.IllegaleZet = new System.Windows.Forms.Label();
+            this.Winnaar = new System.Windows.Forms.Label();
+            this.Speelveld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,7 @@ namespace Reversi_Namespace
             // Speelveld
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Speelveld.Controls.Add(this.Winnaar);
             this.Speelveld.Location = new System.Drawing.Point(63, 173);
             this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
@@ -140,6 +143,16 @@ namespace Reversi_Namespace
             this.IllegaleZet.TabIndex = 9;
             this.IllegaleZet.Text = " ";
             // 
+            // Winnaar
+            // 
+            this.Winnaar.AutoSize = true;
+            this.Winnaar.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Winnaar.Location = new System.Drawing.Point(9, 195);
+            this.Winnaar.Name = "Winnaar";
+            this.Winnaar.Size = new System.Drawing.Size(26, 39);
+            this.Winnaar.TabIndex = 10;
+            this.Winnaar.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -159,6 +172,8 @@ namespace Reversi_Namespace
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Speelveld.ResumeLayout(false);
+            this.Speelveld.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,5 +191,6 @@ namespace Reversi_Namespace
         private System.Windows.Forms.Label BlauwePunten;
         private System.Windows.Forms.Label SpelerBeurt;
         private System.Windows.Forms.Label IllegaleZet;
+        private System.Windows.Forms.Label Winnaar;
     }
 }
