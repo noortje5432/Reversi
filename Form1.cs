@@ -51,10 +51,10 @@ namespace Reversi_Namespace
         {
             int MiddenX = kol / 2;
             int MiddenY = rij / 2;
-            steen[MiddenX, MiddenY] = new Stenen(MiddenX, MiddenY, -1);
+            steen[MiddenX, MiddenY] = new Stenen(MiddenX, MiddenY, 0);
             steen[MiddenX, MiddenY - 1] = new Stenen(MiddenX, MiddenY - 1, 1);
             steen[MiddenX - 1, MiddenY] = new Stenen(MiddenX - 1, MiddenY, 1);
-            steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, -1);
+            steen[MiddenX - 1, MiddenY - 1] = new Stenen(MiddenX - 1, MiddenY - 1, 0);
 
 
         }
@@ -140,7 +140,7 @@ namespace Reversi_Namespace
             {
                 if (s == null)
                     continue;
-                if (s.KleurVanSteen == -1)
+                if (s.KleurVanSteen == 0)
                     AantalBlauw += 1;
             }
             return AantalBlauw.ToString();
@@ -240,6 +240,24 @@ namespace Reversi_Namespace
                             else
                                 break;
                         }
+                        if (zet == 1)
+                        {
+                            if (buurStenen.KleurVanSteen == 0)
+                                t++;
+                            else if (buurStenen.KleurVanSteen == 1)
+                            {
+                                if (t > 0)
+                                {
+                                    while (t > 0)
+                                    {
+                                        steen[SteenX + MogelijkheidX * t, SteenY + MogelijkheidY * t].KleurVanSteen = 1;
+                                        t--;
+                                    }
+                                }
+                            }
+                            else
+                                break;
+                        }
 
                     }
                 }
@@ -270,7 +288,7 @@ namespace Reversi_Namespace
             {
                 if (beurt % 2 == 0)
                 {
-                    steen[SteenX, SteenY] = new Stenen(SteenX, SteenY, -1);
+                    steen[SteenX, SteenY] = new Stenen(SteenX, SteenY, 0);
 
                 }
                 else

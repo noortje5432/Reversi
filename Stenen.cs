@@ -25,7 +25,7 @@ namespace Reversi_Namespace
         {
             float maatx = (float)Form1.schaalx() - 10;
             float maaty = (float)Form1.schaaly() - 10;
-            if (KleurVanSteen == -1)
+            if (KleurVanSteen == 0)
                 Kleur = Brushes.RoyalBlue;
             if (KleurVanSteen == 1)
                 Kleur = Brushes.DarkRed;
