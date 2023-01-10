@@ -317,7 +317,7 @@ namespace Reversi_Namespace
                 RodePunten.Text = AantalRodeStenen() + " rode stenen";
                 Speelveld.Invalidate();
                 //Zet.Text = beurt();
-                //Zet.ForeColor = BeurtKleur();
+                SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
                 //TekstLegaleZet.Text = "";*/
             }
             /*else

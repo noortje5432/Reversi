@@ -37,6 +37,7 @@ namespace Reversi_Namespace
             this.Stand = new System.Windows.Forms.PictureBox();
             this.BlauwePunten = new System.Windows.Forms.Label();
             this.RodePunten = new System.Windows.Forms.Label();
+            this.SpelerBeurt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,12 +114,23 @@ namespace Reversi_Namespace
             this.RodePunten.TabIndex = 7;
             this.RodePunten.Text = "2 rode punten";
             // 
+            // SpelerBeurt
+            // 
+            this.SpelerBeurt.AutoSize = true;
+            this.SpelerBeurt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SpelerBeurt.Location = new System.Drawing.Point(63, 578);
+            this.SpelerBeurt.Name = "SpelerBeurt";
+            this.SpelerBeurt.Size = new System.Drawing.Size(298, 23);
+            this.SpelerBeurt.TabIndex = 8;
+            this.SpelerBeurt.Text = "Speler 1 (blauw) is aan de beurt.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(618, 739);
+            this.Controls.Add(this.SpelerBeurt);
             this.Controls.Add(this.RodePunten);
             this.Controls.Add(this.BlauwePunten);
             this.Controls.Add(this.Stand);
@@ -145,5 +157,6 @@ namespace Reversi_Namespace
         private System.Windows.Forms.PictureBox Stand;
         private System.Windows.Forms.Label RodePunten;
         private System.Windows.Forms.Label BlauwePunten;
+        private System.Windows.Forms.Label SpelerBeurt;
     }
 }
