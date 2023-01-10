@@ -139,6 +139,12 @@ namespace Reversi_Namespace
             return false;
         }
 
+        private void grootteveld()
+        {
+            
+
+        } 
+
 
         public string AantalBlauweStenen()
         {
@@ -214,6 +220,34 @@ namespace Reversi_Namespace
         private void BlauwePunten_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void GrootteVeld_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string woord = GrootteVeld.Text;
+            switch (woord)
+            {
+                case "4 bij 4":
+                    kol = 4;
+                    rij = 4;
+                    break;
+                case "6 bij 6":
+                    kol = 6;
+                    rij = 6;
+                    break;
+                case "8 bij 8":
+                    kol = 8;
+                    rij = 8;
+                    break;
+                case "10 bij 10":
+                    kol = 10;
+                    rij = 10;
+                    break;
+            }
+            Array.Clear(steen, 0, steen.Length);
+            steen = new Stenen[kol, rij];
+            Beginopstelling();
+            Speelveld.Invalidate();
         }
 
         public void Verkleuring(int SteenX, int SteenY)
