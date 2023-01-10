@@ -38,10 +38,10 @@ namespace Reversi_Namespace
             // 
             // NieuwSpel
             // 
-            this.NieuwSpel.Location = new System.Drawing.Point(406, 8);
+            this.NieuwSpel.Location = new System.Drawing.Point(355, 6);
             this.NieuwSpel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.NieuwSpel.Name = "NieuwSpel";
-            this.NieuwSpel.Size = new System.Drawing.Size(109, 43);
+            this.NieuwSpel.Size = new System.Drawing.Size(95, 32);
             this.NieuwSpel.TabIndex = 0;
             this.NieuwSpel.Text = "Nieuw Spel";
             this.NieuwSpel.UseVisualStyleBackColor = true;
@@ -49,10 +49,10 @@ namespace Reversi_Namespace
             // 
             // Help
             // 
-            this.Help.Location = new System.Drawing.Point(406, 53);
+            this.Help.Location = new System.Drawing.Point(355, 40);
             this.Help.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(109, 43);
+            this.Help.Size = new System.Drawing.Size(95, 32);
             this.Help.TabIndex = 2;
             this.Help.Text = "Help";
             this.Help.UseVisualStyleBackColor = true;
@@ -65,18 +65,18 @@ namespace Reversi_Namespace
             "4 bij 4",
             "6 bij 6",
             "8 bij 8"});
-            this.GrootteVeld.Location = new System.Drawing.Point(406, 103);
-            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5);
+            this.GrootteVeld.Location = new System.Drawing.Point(355, 77);
+            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(4);
             this.GrootteVeld.Name = "GrootteVeld";
-            this.GrootteVeld.Size = new System.Drawing.Size(151, 28);
+            this.GrootteVeld.Size = new System.Drawing.Size(133, 23);
             this.GrootteVeld.TabIndex = 3;
             this.GrootteVeld.Text = "Grootte veld";
             // 
             // Speelveld
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Speelveld.Location = new System.Drawing.Point(63, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
+            this.Speelveld.Location = new System.Drawing.Point(55, 130);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(4);
             this.Speelveld.Name = "Speelveld";
             this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
@@ -84,10 +84,10 @@ namespace Reversi_Namespace
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(618, 739);
+            this.ClientSize = new System.Drawing.Size(541, 554);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.GrootteVeld);
             this.Controls.Add(this.Help);
