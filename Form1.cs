@@ -361,19 +361,19 @@ namespace Reversi_Namespace
                 beurt += 1;
                 
                 if (AantalBlauweStenen() == 1)
-                    BlauwePunten.Text = $"{AantalBlauweStenen()} +  steen";
+                    BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
                 else
-                    BlauwePunten.Text = $"{AantalBlauweStenen()} +  stenen";
+                    BlauwePunten.Text = $"{AantalBlauweStenen()} stenen";
                 
                 if (AantalRodeStenen() == 1)
-                    RodePunten.Text = $"{AantalRodeStenen()} +  steen";
+                    RodePunten.Text = $"{AantalRodeStenen()} steen";
                 else
-                    RodePunten.Text = $"{AantalRodeStenen()} +  stenen";
+                    RodePunten.Text = $"{AantalRodeStenen()} stenen";
                 Speelveld.Invalidate();
                 SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
                 IllegaleZet.Text = "";
 
-                if (steen.Length == (kol + 1) * (rij + 1))
+                if (steen.Length == 5)//(kol + 1) * (rij + 1))
                 {
                     if (AantalBlauweStenen() < AantalRodeStenen())
                         Winnaar.Text = "Speler 1 (blauw) heeft gewonnen!";
