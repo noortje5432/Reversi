@@ -35,6 +35,8 @@ namespace Reversi_Namespace
             this.GrootteVeld = new System.Windows.Forms.ComboBox();
             this.Speelveld = new System.Windows.Forms.Panel();
             this.Stand = new System.Windows.Forms.PictureBox();
+            this.BlauwePunten = new System.Windows.Forms.Label();
+            this.RodePunten = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,12 +95,32 @@ namespace Reversi_Namespace
             this.Stand.TabStop = false;
             this.Stand.Paint += new System.Windows.Forms.PaintEventHandler(this.ScoreCirkels);
             // 
+            // BlauwePunten
+            // 
+            this.BlauwePunten.AutoSize = true;
+            this.BlauwePunten.Location = new System.Drawing.Point(215, 56);
+            this.BlauwePunten.Name = "BlauwePunten";
+            this.BlauwePunten.Size = new System.Drawing.Size(119, 20);
+            this.BlauwePunten.TabIndex = 6;
+            this.BlauwePunten.Text = "2 blauwe punten";
+            // 
+            // RodePunten
+            // 
+            this.RodePunten.AutoSize = true;
+            this.RodePunten.Location = new System.Drawing.Point(217, 97);
+            this.RodePunten.Name = "RodePunten";
+            this.RodePunten.Size = new System.Drawing.Size(102, 20);
+            this.RodePunten.TabIndex = 7;
+            this.RodePunten.Text = "2 rode punten";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(618, 739);
+            this.Controls.Add(this.RodePunten);
+            this.Controls.Add(this.BlauwePunten);
             this.Controls.Add(this.Stand);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.GrootteVeld);
@@ -110,6 +132,7 @@ namespace Reversi_Namespace
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,5 +143,7 @@ namespace Reversi_Namespace
         private System.Windows.Forms.ComboBox GrootteVeld;
         private System.Windows.Forms.Panel Speelveld;
         private System.Windows.Forms.PictureBox Stand;
+        private System.Windows.Forms.Label RodePunten;
+        private System.Windows.Forms.Label BlauwePunten;
     }
 }

@@ -211,6 +211,11 @@ namespace Reversi_Namespace
             e.Graphics.FillEllipse(Brushes.DarkRed, 5, 60, 50, 50);
         }
 
+        private void BlauwePunten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public void Verkleuring(int SteenX, int SteenY)
         {
             var zet = beurt % 2 == 0 ? 0 : 1;
@@ -308,9 +313,9 @@ namespace Reversi_Namespace
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
+                BlauwePunten.Text = AantalBlauweStenen() + " blauwe stenen";
+                RodePunten.Text = AantalRodeStenen() + " rode stenen";
                 Speelveld.Invalidate();
-                BlauwePunten.Text = AantalBlauweStenen() + "Blauwe stenen";
-                RodePunten.Text = AantalRodeStenen() + "Rode stenen";
                 //Zet.Text = beurt();
                 //Zet.ForeColor = BeurtKleur();
                 //TekstLegaleZet.Text = "";*/
