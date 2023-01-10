@@ -205,6 +205,12 @@ namespace Reversi_Namespace
 
         }
 
+        private void ScoreCirkels(object sender, PaintEventArgs e)
+        {
+            e.Graphics.FillEllipse(Brushes.RoyalBlue, 5, 5, 50, 50);
+            e.Graphics.FillEllipse(Brushes.DarkRed, 5, 60, 50, 50);
+        }
+
         public void Verkleuring(int SteenX, int SteenY)
         {
             var zet = beurt % 2 == 0 ? 0 : 1;

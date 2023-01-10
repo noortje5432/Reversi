@@ -34,6 +34,8 @@ namespace Reversi_Namespace
             this.Help = new System.Windows.Forms.Button();
             this.GrootteVeld = new System.Windows.Forms.ComboBox();
             this.Speelveld = new System.Windows.Forms.Panel();
+            this.Stand = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Stand)).BeginInit();
             this.SuspendLayout();
             // 
             // NieuwSpel
@@ -66,7 +68,7 @@ namespace Reversi_Namespace
             "6 bij 6",
             "8 bij 8"});
             this.GrootteVeld.Location = new System.Drawing.Point(406, 103);
-            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GrootteVeld.Margin = new System.Windows.Forms.Padding(5);
             this.GrootteVeld.Name = "GrootteVeld";
             this.GrootteVeld.Size = new System.Drawing.Size(151, 28);
             this.GrootteVeld.TabIndex = 3;
@@ -76,11 +78,20 @@ namespace Reversi_Namespace
             // 
             this.Speelveld.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Speelveld.Location = new System.Drawing.Point(63, 173);
-            this.Speelveld.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Speelveld.Margin = new System.Windows.Forms.Padding(5);
             this.Speelveld.Name = "Speelveld";
             this.Speelveld.Size = new System.Drawing.Size(400, 400);
             this.Speelveld.TabIndex = 4;
             this.Speelveld.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ZetSteen);
+            // 
+            // Stand
+            // 
+            this.Stand.Location = new System.Drawing.Point(63, 33);
+            this.Stand.Name = "Stand";
+            this.Stand.Size = new System.Drawing.Size(125, 123);
+            this.Stand.TabIndex = 5;
+            this.Stand.TabStop = false;
+            this.Stand.Paint += new System.Windows.Forms.PaintEventHandler(this.ScoreCirkels);
             // 
             // Form1
             // 
@@ -88,6 +99,7 @@ namespace Reversi_Namespace
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(618, 739);
+            this.Controls.Add(this.Stand);
             this.Controls.Add(this.Speelveld);
             this.Controls.Add(this.GrootteVeld);
             this.Controls.Add(this.Help);
@@ -96,6 +108,7 @@ namespace Reversi_Namespace
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Stand)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,5 +119,6 @@ namespace Reversi_Namespace
         private System.Windows.Forms.Button Help;
         private System.Windows.Forms.ComboBox GrootteVeld;
         private System.Windows.Forms.Panel Speelveld;
+        private System.Windows.Forms.PictureBox Stand;
     }
 }
