@@ -194,17 +194,14 @@ namespace Reversi_Namespace
 
 
 
-
         private void HelpKnop(object sender, EventArgs e)
         {
             help++;
             Speelveld.Invalidate();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        //Hier worden de cirkels boven het speelvlak getekend.
+        //Deze dienen slechts als decoratie en worden niet interacitef gebruikt.
 
         private void ScoreCirkels(object sender, PaintEventArgs e)
         {
@@ -212,11 +209,7 @@ namespace Reversi_Namespace
             e.Graphics.FillEllipse(Brushes.DarkRed, 5, 60, 50, 50);
         }
 
-        private void BlauwePunten_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Hieronder wordt de combobox die in onze 
         private void GrootteVeld_SelectedIndexChanged(object sender, EventArgs e)
         {
             string woord = GrootteVeld.Text;
