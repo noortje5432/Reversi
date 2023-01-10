@@ -353,7 +353,6 @@ namespace Reversi_Namespace
                 }
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
-                beurt += 1;
                 
                 if (AantalBlauweStenen() == 1)
                     BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
@@ -378,7 +377,7 @@ namespace Reversi_Namespace
                         Winnaar.Text = "Remise";
                 }
 
-
+                beurt += 1;
             }
             else
             {
