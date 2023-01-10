@@ -210,17 +210,14 @@ namespace Reversi_Namespace
 
 
 
-
         private void HelpKnop(object sender, EventArgs e)
         {
             help++;
             Speelveld.Invalidate();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        //Hier worden de cirkels boven het speelvlak getekend.
+        //Deze dienen slechts als decoratie en worden niet interacitef gebruikt.
 
         private void ScoreCirkels(object sender, PaintEventArgs e)
         {
@@ -228,11 +225,8 @@ namespace Reversi_Namespace
             e.Graphics.FillEllipse(Brushes.DarkRed, 5, 60, 50, 50);
         }
 
-        private void BlauwePunten_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Hieronder wordt de combobox die in onze applicatie "grootteveld" heet, toegepast. Door middel van switch cases
+        // worden de verschillende grotes aan variabelen toegekend. 
         private void GrootteVeld_SelectedIndexChanged(object sender, EventArgs e)
         {
             string woord = GrootteVeld.Text;
@@ -255,9 +249,11 @@ namespace Reversi_Namespace
                     rij = 10;
                     break;
             }
+            //Het speelbord wordt na het kiezen van de veldgrootte natuurlijk leeg gemaakt.
             SpeelbordLeeg(sender, e);
         }
 
+        //Deze methode verandert de kleur van de stenen. Deze methode lijkt erg op de methode "magzet".
         public void Verkleuring(int SteenX, int SteenY)
         {
             var zet = beurt % 2 == 0 ? 0 : 1;
@@ -278,7 +274,8 @@ namespace Reversi_Namespace
                             break;
                         if (buurStenen == null)
                             break;
-
+                        //In dit stuk kijk het programma wie er aan de beurt is, zodat de stenen naar de goede kleur kunnen veranderen.
+                        //Er wordt hier ook gekeken hoeveel stenen er moeten veranderen.
                         if (zet == 0)
                         {
                             if (buurStenen.KleurVanSteen == 1)
@@ -321,6 +318,8 @@ namespace Reversi_Namespace
             }
         }
 
+        //In deze methode wordt de steen gezet door middel van een muisklik.
+        //Eerst wordt er door middel van twee for-loops gekeken waar er wordt geklikt, en deze worden later gematched met de steen array.
         private void ZetSteen(object sender, MouseEventArgs mea)
         {
             int muiscoordx = mea.X;
@@ -355,6 +354,8 @@ namespace Reversi_Namespace
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
 
+                //In dit deel van de methode worden de teksten aangepast die corresponderen met het aantal blauwe en rode stenen boven het speelveld.
+                //Ook wordt hier de teksten over de beurten en de teksten over de eindstand aangepast.
                 if (AantalBlauweStenen() == 1)
                     BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
                 else
@@ -380,6 +381,7 @@ namespace Reversi_Namespace
 
                 beurt++;
             }
+            //Als de zet niet mogelijk is komt boven het speelveld deze tekst tevoorschijn.
             else
             {
                 IllegaleZet.Text = "Deze zet is illegaal!";
