@@ -259,10 +259,7 @@ namespace Reversi_Namespace
                     rij = 10;
                     break;
             }
-            Array.Clear(steen, 0, steen.Length);
-            steen = new Stenen[kol, rij];
-            Beginopstelling();
-            Speelveld.Invalidate();
+            SpeelbordLeeg(sender, e);
         }
 
         public void Verkleuring(int SteenX, int SteenY)
