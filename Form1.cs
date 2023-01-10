@@ -140,7 +140,7 @@ namespace Reversi_Namespace
         }
 
 
-        public int AantalBlauweStenen()
+        public string AantalBlauweStenen()
         {
             int AantalBlauw = 0;
             foreach (Stenen s in steen)
@@ -150,10 +150,10 @@ namespace Reversi_Namespace
                 if (s.KleurVanSteen == 0)
                     AantalBlauw += 1;
             }
-            return AantalBlauw;
+            return AantalBlauw.ToString();
         }
 
-        public int AantalRodeStenen()
+        public string AantalRodeStenen()
         {
             int AantalRood = 0;
             foreach (Stenen s in steen)
@@ -163,7 +163,7 @@ namespace Reversi_Namespace
                 if (s.KleurVanSteen == 1)
                     AantalRood += 1;
             }
-            return AantalRood;
+            return AantalRood.ToString();
         }
 
         public string WieIsAanDeBeurt()
@@ -182,6 +182,12 @@ namespace Reversi_Namespace
                 return Color.DarkRed;
         }
 
+
+        private void buttonNieuwSpel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
             SolidBrush Speler1 = new SolidBrush(Color.RoyalBlue);
@@ -194,10 +200,20 @@ namespace Reversi_Namespace
             Speelveld.Invalidate();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ScoreCirkels(object sender, PaintEventArgs e)
         {
             e.Graphics.FillEllipse(Brushes.RoyalBlue, 5, 5, 50, 50);
             e.Graphics.FillEllipse(Brushes.DarkRed, 5, 60, 50, 50);
+        }
+
+        private void BlauwePunten_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         public void Verkleuring(int SteenX, int SteenY)
@@ -297,17 +313,11 @@ namespace Reversi_Namespace
                 pas = 0;
                 Verkleuring(SteenX, SteenY);
                 beurt += 1;
-                if (AantalBlauweStenen() == 1)
-                    BlauwePunten.Text = $"{AantalBlauweStenen()} steen";
-                else
-                    BlauwePunten.Text = $"{AantalBlauweStenen()} stenen";
-                if (AantalRodeStenen() == 1)
-                    RodePunten.Text = $"{AantalRodeStenen()} steen";
-                else
-                    RodePunten.Text = $"{AantalRodeStenen()} stenen";
+                BlauwePunten.Text = AantalBlauweStenen() + " blauwe stenen";
+                RodePunten.Text = AantalRodeStenen() + " rode stenen";
                 Speelveld.Invalidate();
                 //Zet.Text = beurt();
-                BeurtKleur.Text = $"{WieIsAanDeBeurt()}";
+                //Zet.ForeColor = BeurtKleur();
                 //TekstLegaleZet.Text = "";*/
             }
             /*else
