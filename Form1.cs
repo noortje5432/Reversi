@@ -187,7 +187,7 @@ namespace Reversi_Namespace
             e.Graphics.FillEllipse(Speler1, 10, 10, 100, 100);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void HelpKnop(object sender, EventArgs e)
         {
 
         }
