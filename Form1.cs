@@ -29,6 +29,7 @@ namespace Reversi_Namespace
             this.Speelveld.Paint += Tekenveld;
         }
 
+        //In deze methodes worden onze speelstenen op de juiste plek op het bord gezet tenzame met de juiste grootte.
 
         public static double schaalx()
         {
@@ -40,6 +41,7 @@ namespace Reversi_Namespace
             return 400 / rij;
         }
 
+        //Deze methode maakt de beginopstelling op het speelbord.
         private void Beginopstelling()
         {
             int MiddenX = kol / 2;
@@ -72,6 +74,8 @@ namespace Reversi_Namespace
 
         }
 
+        //Met deze methode wordt op het speelveld de benodigde lijnen getekend, worden stenen getekend en worden de hulpcirkels getekend.
+        //De benodigde lijnen worden getekend met behulp van twee for-loops.
         private void Tekenveld(object sender, PaintEventArgs pea)
         {
             Pen pen = new Pen(Color.Black, 5);
@@ -84,7 +88,7 @@ namespace Reversi_Namespace
                 if (s != null)
                     s.tekenSteen(sender, pea);
             }
-
+            //Hier wordt gekeken waar de hulcirkels moeten.
             for (int i = 0; i < kol; i++)
             {
                 for (int j = 0; j < rij; j++)
