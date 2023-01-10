@@ -17,7 +17,7 @@ namespace Reversi_Namespace
         static int rij = 6;
         Stenen[,] steen;
         bool LegaleZet = false;
-        int pas, help, beurt = 0;
+        int help, pas, beurt = 0;
 
 
         public Form1()
@@ -59,6 +59,21 @@ namespace Reversi_Namespace
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SpeelbordLeeg(sender, e);
+        }
+
+        private void SpeelbordLeeg(object sender, EventArgs e)
+        {
+            Array.Clear(steen, 0, steen.Length);
+            steen = new Stenen[kol, rij];
+            Beginopstelling();
+            Speelveld.Invalidate();
+            help = 0;
+            beurt = 0;
+            BlauwePunten.Text = AantalBlauweStenen() + " blauwe stenen";
+            RodePunten.Text = AantalRodeStenen() + " rode stenen";
+            IllegaleZet.Text = "";
+            SpelerBeurt.Text = "Speler 1 (blauw) is aan de beurt.";
 
         }
 
@@ -316,14 +331,13 @@ namespace Reversi_Namespace
                 BlauwePunten.Text = AantalBlauweStenen() + " blauwe stenen";
                 RodePunten.Text = AantalRodeStenen() + " rode stenen";
                 Speelveld.Invalidate();
-                //Zet.Text = beurt();
                 SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
-                //TekstLegaleZet.Text = "";*/
+                IllegaleZet.Text = "";
             }
-            /*else
+            else
             {
-                TekstLegaleZet.Text = "Deze zet is illegaal!";
-            }*/
+                IllegaleZet.Text = "Deze zet is illegaal!";
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Reversi_Namespace
             this.BlauwePunten = new System.Windows.Forms.Label();
             this.RodePunten = new System.Windows.Forms.Label();
             this.SpelerBeurt = new System.Windows.Forms.Label();
+            this.IllegaleZet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Stand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,18 +100,22 @@ namespace Reversi_Namespace
             // BlauwePunten
             // 
             this.BlauwePunten.AutoSize = true;
-            this.BlauwePunten.Location = new System.Drawing.Point(215, 56);
+            this.BlauwePunten.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BlauwePunten.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.BlauwePunten.Location = new System.Drawing.Point(123, 45);
             this.BlauwePunten.Name = "BlauwePunten";
-            this.BlauwePunten.Size = new System.Drawing.Size(119, 20);
+            this.BlauwePunten.Size = new System.Drawing.Size(259, 39);
             this.BlauwePunten.TabIndex = 6;
             this.BlauwePunten.Text = "2 blauwe punten";
             // 
             // RodePunten
             // 
             this.RodePunten.AutoSize = true;
-            this.RodePunten.Location = new System.Drawing.Point(217, 97);
+            this.RodePunten.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RodePunten.ForeColor = System.Drawing.Color.DarkRed;
+            this.RodePunten.Location = new System.Drawing.Point(123, 105);
             this.RodePunten.Name = "RodePunten";
-            this.RodePunten.Size = new System.Drawing.Size(102, 20);
+            this.RodePunten.Size = new System.Drawing.Size(221, 39);
             this.RodePunten.TabIndex = 7;
             this.RodePunten.Text = "2 rode punten";
             // 
@@ -124,12 +129,22 @@ namespace Reversi_Namespace
             this.SpelerBeurt.TabIndex = 8;
             this.SpelerBeurt.Text = "Speler 1 (blauw) is aan de beurt.";
             // 
+            // IllegaleZet
+            // 
+            this.IllegaleZet.AutoSize = true;
+            this.IllegaleZet.Location = new System.Drawing.Point(63, 8);
+            this.IllegaleZet.Name = "IllegaleZet";
+            this.IllegaleZet.Size = new System.Drawing.Size(13, 20);
+            this.IllegaleZet.TabIndex = 9;
+            this.IllegaleZet.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(618, 739);
+            this.Controls.Add(this.IllegaleZet);
             this.Controls.Add(this.SpelerBeurt);
             this.Controls.Add(this.RodePunten);
             this.Controls.Add(this.BlauwePunten);
@@ -158,5 +173,6 @@ namespace Reversi_Namespace
         private System.Windows.Forms.Label RodePunten;
         private System.Windows.Forms.Label BlauwePunten;
         private System.Windows.Forms.Label SpelerBeurt;
+        private System.Windows.Forms.Label IllegaleZet;
     }
 }
