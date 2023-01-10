@@ -82,17 +82,17 @@ namespace Reversi_Namespace
 
         static Tuple<int[], int[]> Mogelijkheden()
         {
-            int[] MogelijkVoorX = new int[3];
-            int[] MogelijkVoorY = new int[3];
+            int[] MogelijkheidX = new int[3];
+            int[] MogelijkheidY = new int[3];
 
-            MogelijkVoorX[0] = -1;
-            MogelijkVoorY[0] = -1;
-            MogelijkVoorX[0] = 0;
-            MogelijkVoorY[0] = 0;
-            MogelijkVoorX[0] = 1;
-            MogelijkVoorY[0] = 1;
+            MogelijkheidX[0] = -1;
+            MogelijkheidY[0] = -1;
+            MogelijkheidX[0] = 0;
+            MogelijkheidY[0] = 0;
+            MogelijkheidX[0] = 1;
+            MogelijkheidY[0] = 1;
 
-            return new Tuple<int[], int[]>(MogelijkVoorX, MogelijkVoorY);
+            return new Tuple<int[], int[]>(MogelijkheidX, MogelijkheidY);
         }
 
         private bool MagZet(int SteenX, int SteenY)
