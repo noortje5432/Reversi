@@ -89,9 +89,19 @@ namespace Reversi_Namespace
                     s.tekenSteen(sender, pea);
             }
 
-            if (passen() == true)
+            for (int i = 0; i < kol; i++)
             {
-
+                for (int j = 0; j < rij; j++)
+                {
+                    if ((steen[i, j] == null && MagZet(i, j) != false) == true)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        pas++;
+                    }
+                }
             }
 
             //Hier wordt gekeken waar de hulpcirkels moeten.
@@ -375,22 +385,5 @@ namespace Reversi_Namespace
                 IllegaleZet.Text = "Deze zet is illegaal!";
             }
         }
-
-        private bool passen()
-        {
-            for (int i = 0; i < kol; i++)
-            {
-                for (int j = 0; j < rij; j++)
-                {
-                    if ((steen[i, j] == null && MagZet(i, j) != false) == true)
-                    {
-                        return true;
-                    }
-                    else
-                        return false;
-                }
-            }
-        }
-
     }
 }
