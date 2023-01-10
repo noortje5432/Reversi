@@ -18,7 +18,8 @@ namespace Reversi_Namespace
         static int rij = 6;
         Stenen[,] steen;
         bool LegaleZet = false;
-        int help, pas, beurt = 0;
+        int help, pas, beurt, BeurtenGepast = 0;
+
 
         //Hier laden wij onze beginopstelling en andere componenten op de form.
         public Form1()
@@ -89,19 +90,28 @@ namespace Reversi_Namespace
                     s.tekenSteen(sender, pea);
             }
 
+            List<int> Mogelijkheid= new List<int>();
+
             for (int i = 0; i < kol; i++)
             {
                 for (int j = 0; j < rij; j++)
                 {
                     if ((steen[i, j] == null && MagZet(i, j) != false) == true)
                     {
-                        continue;
+                        Mogelijkheid.Add(1);
                     }
                     else
                     {
-                        pas++;
+                        continue;
                     }
                 }
+            }
+
+            if (Mogelijkheid.Count == 0)
+            {
+                beurt++;
+                Mogelijkheid.Clear();
+                BeurtenGepast++;
             }
 
             //Hier wordt gekeken waar de hulpcirkels moeten.
@@ -202,7 +212,7 @@ namespace Reversi_Namespace
 
         public string WieIsAanDeBeurt()
         {
-            if (beurt % 2 == 0)
+            if (beurt % 2 == 1)
                 return "Speler 1 (blauw) is aan de beurt.";
             else
                 return "Speler 2 (rood) is aan de beurt.";
@@ -369,14 +379,14 @@ namespace Reversi_Namespace
                 SpelerBeurt.Text = $"{WieIsAanDeBeurt()}";
                 IllegaleZet.Text = "";
 
-                if (beurt == kol * rij - 5)
+                if (beurt == BeurtenGepast + kol * rij - 5)
                 {
                     if (AantalBlauweStenen() > AantalRodeStenen())
-                        Winnaar.Text = "Speler 1 (blauw) heeft gewonnen!";
+                        SpelerBeurt.Text = "Speler 1 (blauw) heeft gewonnen!";
                     if (AantalRodeStenen() > AantalBlauweStenen())
-                        Winnaar.Text = "Speler 2 (rood) heeft gewonnen!";
+                        SpelerBeurt.Text = "Speler 2 (rood) heeft gewonnen!";
                     else
-                        Winnaar.Text = "Remise";
+                        SpelerBeurt.Text = "Remise";
                 }
 
                 beurt++;
